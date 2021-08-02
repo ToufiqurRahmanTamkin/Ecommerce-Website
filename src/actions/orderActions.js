@@ -32,7 +32,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
     const {
       userSignin: { userInfo },
     } = getState();
-    const { data } = await Axios.post("https://salty-scrubland-35988.herokuapp.com/api/orders", order, {
+    const { data } = await Axios.post("/api/orders", order, {
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
       },

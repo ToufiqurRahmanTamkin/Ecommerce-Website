@@ -169,7 +169,7 @@ export const deleteUser = (userId) => async (dispatch, getState) => {
 export const listTopSellers = () => async (dispatch) => {
   dispatch({ type: USER_TOPSELLERS_LIST_REQUEST });
   try {
-    const { data } = await Axios.get("https://salty-scrubland-35988.herokuapp.com/api/users/top-sellers");
+    const { data } = await Axios.get("/api/users/top-sellers");
     dispatch({ type: USER_TOPSELLERS_LIST_SUCCESS, payload: data });
   } catch (error) {
     const message =
